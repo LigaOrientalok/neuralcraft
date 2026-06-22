@@ -1,9 +1,11 @@
 /* ===== Theme Toggle ===== */
 const html = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
-const savedTheme = localStorage.getItem('theme') || 'dark';
+const savedTheme = localStorage.getItem('theme');
+const validThemes = ['dark', 'light'];
+const themeValue = validThemes.includes(savedTheme) ? savedTheme : 'dark';
 
-html.setAttribute('data-theme', savedTheme);
+html.setAttribute('data-theme', themeValue);
 themeToggle.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
 
 themeToggle.addEventListener('click', () => {
@@ -213,20 +215,52 @@ document.getElementById('year').textContent = new Date().getFullYear();
     if (!res.ok) throw new Error('GitHub API error');
     const repos = await res.json();
 
-    container.innerHTML = repos.map(repo => `
-      <a href="${repo.html_url}" target="_blank" class="gh-card">
-        <h3>📦 ${repo.name} <span>· ${repo.private ? '🔒' : '🌍'}</span></h3>
-        <p>${repo.description || 'Sin descripción'}</p>
-        <div class="gh-footer">
-          <span>⭐ ${repo.stargazers_count}</span>
-          <span>⑂ ${repo.forks_count}</span>
-          ${repo.language ? `<span>🔹 ${repo.language}</span>` : ''}
-          <span>🕐 ${new Date(repo.updated_at).toLocaleDateString()}</span>
-        </div>
-      </a>
-    `).join('');
+    container.innerHTML = '';
+    repos.forEach(repo => {
+      const a = document.createElement('a');
+      a.href = repo.html_url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.className = 'gh-card';
+
+      const h3 = document.createElement('h3');
+      h3.textContent = repo.name;
+      const h3Icon = document.createTextNode('\uD83D\uDCE6 ');
+      h3.prepend(h3Icon);
+      const h3Span = document.createElement('span');
+      h3Span.textContent = ' \u00B7 ' + (repo.private ? '\uD83D\uDD12' : '\uD83C\uDF0D');
+      h3.appendChild(h3Span);
+
+      const p = document.createElement('p');
+      p.textContent = repo.description || 'Sin descripci\u00F3n';
+
+      const footer = document.createElement('div');
+      footer.className = 'gh-footer';
+
+      const stars = document.createElement('span');
+      stars.textContent = '\u2B50 ' + repo.stargazers_count;
+      const forks = document.createElement('span');
+      forks.textContent = '\u2382 ' + repo.forks_count;
+      footer.appendChild(stars);
+      footer.appendChild(forks);
+
+      if (repo.language) {
+        const lang = document.createElement('span');
+        lang.textContent = '\uD83D\uDD39 ' + repo.language;
+        footer.appendChild(lang);
+      }
+
+      const date = document.createElement('span');
+      date.textContent = '\uD83D\uDD50 ' + new Date(repo.updated_at).toLocaleDateString();
+      footer.appendChild(date);
+
+      a.appendChild(h3);
+      a.appendChild(p);
+      a.appendChild(footer);
+      container.appendChild(a);
+    });
   } catch (err) {
-    container.innerHTML = `<div class="gh-error">No se pudieron cargar los repositorios 😅</div>`;
+    container.innerHTML = '<div class="gh-error">No se pudieron cargar los repositorios \uD83D\uDE05</div>';
   }
 })();
 
