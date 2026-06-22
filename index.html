@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuralCraft — Portafolio IA</title>
+  <meta name="description" content="Portafolio de Nicolás — Full-Stack Developer especializado en Vue 3, Supabase e IA. Proyectos: Anime Oriental y Liga Oriental." />
+  <meta property="og:title" content="NeuralCraft — Portafolio IA" />
+  <meta property="og:description" content="Full-Stack Developer · Vue 3 · Supabase · Construyendo apps con IA" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0a0a12" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>⚡</text></svg>" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="logo">NeuralCraft</span>
+      <div class="nav-links">
+        <a href="#hero" class="active">Inicio</a>
+        <a href="#about">Sobre mí</a>
+        <a href="#timeline">Trayectoria</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#skills">Skills</a>
+        <a href="#ai-stack">Stack IA</a>
+        <a href="#contact">Contacto</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">🌙</button>
+        <button class="nav-toggle" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <canvas id="bg-canvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-greeting">Hola, soy</p>
+      <h1 class="hero-name">
+        <span class="typewriter"></span><span class="cursor">|</span>
+      </h1>
+      <p class="hero-tagline">
+        Full-Stack Developer · Vue 3 · Supabase · Construyendo apps con IA
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+        <a href="#contact" class="btn btn-outline">Contactar</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-header">
+      <h2>Sobre mí</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          Soy un desarrollador <strong>Full-Stack</strong> apasionado por construir
+          aplicaciones web modernas con <strong>Vue 3</strong>, <strong>Supabase</strong>
+          y <strong>Tailwind CSS</strong>. Me encanta transformar ideas en productos
+          funcionales, desde plataformas de streaming hasta sistemas de gestión deportiva.
+        </p>
+        <p>
+          Cada proyecto lo construyo integrando <strong>IA</strong> en el flujo de
+          desarrollo — desde generar código con modelos de lenguaje hasta automatizar
+          tareas con agentes. Actualmente explorando <strong>LangChain</strong>,
+          <strong>RAG pipelines</strong> y <strong>fine-tuning</strong> de modelos.
+        </p>
+      </div>
+      <div class="about-stats reveal">
+        <div class="stat"><span class="stat-num" data-target="2">0</span><span class="stat-label">Proyectos en Producción</span></div>
+        <div class="stat"><span class="stat-num" data-target="2">0</span><span class="stat-label">Apps Desplegadas</span></div>
+        <div class="stat"><span class="stat-num" data-target="1">0</span><span class="stat-label">Año Codeando con IA</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="section-header">
+      <h2>Mi Trayectoria</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2024</span>
+          <h3>Descubrí la programación</h3>
+          <p>Empecé con HTML, CSS y JavaScript. Mi primer "Hola Mundo" fue el inicio de todo.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2025</span>
+          <h3>Primer proyecto con Vue 3</h3>
+          <p>Descubrí Vue 3 y la Composition API. Ahí supe que el frontend moderno era lo mío.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2025</span>
+          <h3>Descubrí Supabase</h3>
+          <p>Backend sin esfuerzo: auth, base de datos, storage, edge functions. Un antes y un después.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2026</span>
+          <h3>Anime Oriental — Primer deploy</h3>
+          <p>Plataforma de streaming completa con roles, reproductor y dark mode. Mi primer proyecto en producción.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2026</span>
+          <h3>Liga Oriental — App compleja</h3>
+          <p>Gestión deportiva con pagos, PWA, chat en tiempo real, galería y más. Mi proyecto más ambicioso.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2026</span>
+          <h3>Integrando IA al workflow</h3>
+          <p>Uso intensivo de ChatGPT, Claude y Cursor para acelerar desarrollo. Explorando agentes y RAG.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-header">
+      <h2>Proyectos Destacados</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="projects-grid">
+
+      <article class="project-card reveal">
+        <div class="card-banner">
+          <div class="card-icon">🎬</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Streaming</span>
+          <h3>Anime Oriental</h3>
+          <p>Plataforma de streaming de anime con catálogo, reproductor de video, autenticación por roles y panel administrador.</p>
+          <ul class="card-features">
+            <li>🎞️ Catálogo con filtros (género, año, estado, popularidad)</li>
+            <li>▶️ Reproductor con control de velocidad y fullscreen</li>
+            <li>👑 Roles: Admin (CRUD) y Usuario (historial, favoritos)</li>
+            <li>🌙 Dark mode + responsive mobile-first</li>
+          </ul>
+          <div class="card-tech">
+            <span>Vue 3</span><span>Vite</span><span>Tailwind</span><span>Supabase</span><span>Pinia</span>
+          </div>
+          <div class="card-links">
+            <a href="https://anime-oriental.vercel.app" target="_blank" class="card-btn">
+              <span class="btn-loader"></span> Demo
+            </a>
+            <a href="https://github.com/LigaOrientalok/anime-oriental" target="_blank" class="card-btn card-btn-ghost">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="card-banner">
+          <div class="card-icon">⚽</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Gestión Deportiva</span>
+          <h3>Liga Oriental</h3>
+          <p>App completa para gestionar torneos de fútbol: fixture, estadísticas en vivo, pagos, galería, chat y más.</p>
+          <ul class="card-features">
+            <li>📊 Tabla de posiciones, fixture automático, ranking de jugadores</li>
+            <li>💳 Pagos con Mercado Pago (Edge Functions + Webhook)</li>
+            <li>📸 Galería multimedia con likes y comentarios</li>
+            <li>⚡ Modo live + chat en tiempo real + notificaciones push</li>
+            <li>📱 PWA instalable en celular</li>
+          </ul>
+          <div class="card-tech">
+            <span>Vue 3</span><span>Pinia</span><span>Supabase</span><span>Tailwind</span><span>Mercado Pago</span><span>PWA</span>
+          </div>
+          <div class="card-links">
+            <a href="https://liga-oriental-vue.vercel.app" target="_blank" class="card-btn">
+              <span class="btn-loader"></span> Demo
+            </a>
+            <a href="https://github.com/LigaOrientalok/liga-oriental-vue" target="_blank" class="card-btn card-btn-ghost">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="card-banner">
+          <div class="card-icon">📊</div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Herramienta</span>
+          <h3>StackSight</h3>
+          <p>Visualizador de stack tech: seleccioná tus tecnologías, personalizá la card y exportala como PNG para compartir.</p>
+          <ul class="card-features">
+            <li>📦 37 tecnologías en 5 categorías</li>
+            <li>🎨 5 temas de color para la card</li>
+            <li>📸 Exporta a PNG con html2canvas</li>
+            <li>⚡ Hecho con Vue 3 + Composition API</li>
+          </ul>
+          <div class="card-tech">
+            <span>Vue 3</span><span>html2canvas</span><span>CSS Grid</span>
+          </div>
+          <div class="card-links">
+            <a href="https://stack-sight-one.vercel.app" target="_blank" class="card-btn">🚀 Demo</a>
+            <a href="https://github.com/LigaOrientalok/stack-sight" target="_blank" class="card-btn card-btn-ghost">🐙 GitHub</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-header">
+      <h2>Tecnologías</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="skills-container">
+      <div class="skill-group reveal">
+        <h3>Frontend</h3>
+        <div class="skill-bar"><span>Vue 3</span><div class="bar"><div class="fill" style="--p:95%"></div></div></div>
+        <div class="skill-bar"><span>JavaScript</span><div class="bar"><div class="fill" style="--p:90%"></div></div></div>
+        <div class="skill-bar"><span>TypeScript</span><div class="bar"><div class="fill" style="--p:75%"></div></div></div>
+        <div class="skill-bar"><span>Tailwind CSS</span><div class="bar"><div class="fill" style="--p:90%"></div></div></div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Backend & DB</h3>
+        <div class="skill-bar"><span>Supabase</span><div class="bar"><div class="fill" style="--p:95%"></div></div></div>
+        <div class="skill-bar"><span>PostgreSQL</span><div class="bar"><div class="fill" style="--p:85%"></div></div></div>
+        <div class="skill-bar"><span>Edge Functions</span><div class="bar"><div class="fill" style="--p:80%"></div></div></div>
+        <div class="skill-bar"><span>REST APIs</span><div class="bar"><div class="fill" style="--p:85%"></div></div></div>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Herramientas</h3>
+        <div class="skill-bar"><span>Git</span><div class="bar"><div class="fill" style="--p:90%"></div></div></div>
+        <div class="skill-bar"><span>Vite</span><div class="bar"><div class="fill" style="--p:90%"></div></div></div>
+        <div class="skill-bar"><span>Vercel</span><div class="bar"><div class="fill" style="--p:85%"></div></div></div>
+        <div class="skill-bar"><span>PWA</span><div class="bar"><div class="fill" style="--p:75%"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai-stack">
+    <div class="section-header">
+      <h2>Stack IA</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Las herramientas que uso para potenciar mi desarrollo con inteligencia artificial</p>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-card reveal">
+        <div class="ai-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+        </div>
+        <h3>ChatGPT</h3>
+        <p>Ideación, debugging, code review. Mi copiloto de cabecera para resolver problemas complejos.</p>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+        </div>
+        <h3>Claude</h3>
+        <p>Análisis profundo, arquitectura de software y refactorización. Ideal para diseño de sistemas.</p>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+        </div>
+        <h3>Cursor</h3>
+        <p>IDE con IA integrada. Autocompletado inteligente y edición contextual sin salir del editor.</p>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>
+        </div>
+        <h3>GitHub Copilot</h3>
+        <p>Autocompletado en tiempo real. Genera funciones completas mientras escribo el nombre.</p>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
+        </div>
+        <h3>OpenAI API</h3>
+        <p>Integración de GPT en apps. Automatización, generación de contenido y asistentes inteligentes.</p>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"/></svg>
+        </div>
+        <h3>LangChain</h3>
+        <p>Explorando cadenas de LLM, RAG pipelines y agentes autónomos para proyectos futuros.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="github">
+    <div class="section-header">
+      <h2>Actividad Reciente</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Mis últimos proyectos en GitHub</p>
+    </div>
+    <div class="github-grid" id="gh-repos">
+      <div class="gh-loader">Cargando...</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-header">
+      <h2>Contacto</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-content reveal">
+      <p>¿Tienes un proyecto en mente? Hablemos.</p>
+      <div class="contact-links">
+        <a href="https://github.com/LigaOrientalok" target="_blank" class="contact-item">
+          <span class="ci-icon">🐙</span>
+          <span>GitHub</span>
+        </a>
+        <a href="https://anime-oriental.vercel.app" target="_blank" class="contact-item">
+          <span class="ci-icon">🎬</span>
+          <span>Anime Oriental</span>
+        </a>
+        <a href="https://liga-oriental-vue.vercel.app" target="_blank" class="contact-item">
+          <span class="ci-icon">⚽</span>
+          <span>Liga Oriental</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="year"></span> NeuralCraft — Hecho con ⚡ Vue y Supabase</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
