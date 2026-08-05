@@ -428,7 +428,15 @@ I18N.es = {
   'contact-title': 'Contacto', 'contact-p': '¿Tienes un proyecto en mente? Hablemos.',
   'cf-name': 'Tu nombre', 'cf-email': 'Tu email (opcional)', 'cf-msg': 'Contame sobre tu proyecto...', 'cf-submit': 'Enviar por WhatsApp',
   'footer-text': 'Hecho con ⚡ Vue y Supabase',
-  'wa-tip': '¿Hablamos? Escríbeme ✨'
+  'wa-tip': '¿Hablamos? Escríbeme ✨',
+  'chat-title': 'Asistente NeuralCraft',
+  'chat-sub': 'Preguntame sobre proyectos y servicios',
+  'chat-welcome': '¡Hola! 👋 Soy el asistente de Nicolás. ¿En qué te ayudo?',
+  'chip-1': '¿Qué servicios ofrecés?',
+  'chip-2': 'Mostrame tus proyectos',
+  'chip-3': '¿Cuánto tarda una landing?',
+  'chat-ph': 'Escribí tu pregunta...',
+  'chat-err': 'Ups, no pude conectarme con el asistente. Probá de nuevo o escribime por WhatsApp.'
 };
 
 I18N.en = {
@@ -520,7 +528,15 @@ I18N.en = {
   'contact-title': 'Contact', 'contact-p': 'Have a project in mind? Let\'s talk.',
   'cf-name': 'Your name', 'cf-email': 'Your email (optional)', 'cf-msg': 'Tell me about your project...', 'cf-submit': 'Send via WhatsApp',
   'footer-text': 'Built with ⚡ Vue and Supabase',
-  'wa-tip': 'Want to talk? Message me ✨'
+  'wa-tip': 'Want to talk? Message me ✨',
+  'chat-title': 'NeuralCraft Assistant',
+  'chat-sub': 'Ask me about projects and services',
+  'chat-welcome': 'Hi! 👋 I\'m Nicolás\'s assistant. How can I help you?',
+  'chip-1': 'What services do you offer?',
+  'chip-2': 'Show me your projects',
+  'chip-3': 'How long does a landing take?',
+  'chat-ph': 'Type your question...',
+  'chat-err': 'Oops, I couldn\'t reach the assistant. Try again or message me on WhatsApp.'
 };
 
 // Valores de los diccionarios son strings estáticos propios (sin input de usuario).
@@ -569,4 +585,85 @@ filterBtns.forEach(btn => {
 /* ===== Lazy image fallback ===== */
 document.querySelectorAll('.card-shot, .gh-chart-img').forEach(img => {
   img.addEventListener('error', () => { img.style.display = 'none'; });
+});
+
+/* ===== AI Chat ===== */
+const chatBtn = document.getElementById('ai-chat-btn');
+const chatPanel = document.getElementById('ai-chat');
+const chatClose = document.getElementById('ai-chat-close');
+const chatBody = document.getElementById('ai-chat-body');
+const chatForm = document.getElementById('ai-chat-form');
+const chatInput = document.getElementById('ai-chat-input');
+const chatChips = document.querySelectorAll('.ai-chip');
+const chatHistory = [];
+
+function chatToggle(open) {
+  chatPanel.classList.toggle('open', open);
+  chatBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  chatPanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+}
+
+if (chatBtn && chatPanel) {
+  chatBtn.addEventListener('click', () => chatToggle(!chatPanel.classList.contains('open')));
+  chatClose.addEventListener('click', () => chatToggle(false));
+}
+
+function addMsg(role, text) {
+  const div = document.createElement('div');
+  div.className = 'ai-msg ' + (role === 'user' ? 'ai-user' : 'ai-bot');
+  div.textContent = text;
+  chatBody.appendChild(div);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function showTyping() {
+  const div = document.createElement('div');
+  div.className = 'ai-msg ai-bot';
+  div.innerHTML = '<span class="ai-dots"><span></span><span></span><span></span></span>';
+  chatBody.appendChild(div);
+  chatBody.scrollTop = chatBody.scrollHeight;
+  return div;
+}
+
+async function ask(question) {
+  addMsg('user', question);
+  chatHistory.push({ role: 'user', content: question });
+  const typing = showTyping();
+
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messages: [
+          { role: 'user', content: 'Conversation language: ' + currentLang.toUpperCase() },
+          ...chatHistory
+        ]
+      })
+    });
+    if (!res.ok) throw new Error('chat request failed');
+    const data = await res.json();
+    typing.remove();
+    addMsg('bot', data.reply);
+    chatHistory.push({ role: 'assistant', content: data.reply });
+  } catch (err) {
+    typing.remove();
+    addMsg('bot', I18N[currentLang]['chat-err']);
+  }
+}
+
+if (chatForm) {
+  chatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const q = chatInput.value.trim();
+    if (!q) return;
+    chatInput.value = '';
+    ask(q);
+  });
+}
+
+chatChips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    ask(chip.textContent.trim());
+  });
 });
