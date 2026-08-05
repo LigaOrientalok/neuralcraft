@@ -3,20 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeuralCraft — Portafolio IA</title>
-  <meta name="description" content="Portafolio de Nicolás — Full-Stack Developer especializado en Vue 3, Supabase e IA. Proyectos: Anime Oriental y Liga Oriental." />
-  <meta property="og:title" content="NeuralCraft — Portafolio IA" />
-  <meta property="og:description" content="Full-Stack Developer · Vue 3 · Supabase · Construyendo apps con IA" />
+  <title>NeuralCraft — Portafolio de Nicolás · Full-Stack & IA</title>
+  <meta name="description" content="Portafolio de Nicolás — Full-Stack Developer especializado en Vue 3, Next.js, Supabase e IA. Proyectos: Anime Oriental, Liga Oriental, StackSight y FutbolPro Uruguay." />
+  <meta name="keywords" content="desarrollador full-stack, vue 3, next.js, supabase, portafolio, desarrollador web uruguay, inteligencia artificial" />
+  <meta name="author" content="Nicolás" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://neuralcraft-green.vercel.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NeuralCraft — Portafolio de Nicolás" />
+  <meta property="og:description" content="Full-Stack Developer · Vue 3 · Next.js · Supabase · Construyendo apps con IA" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://neuralcraft-green.vercel.app/" />
+  <meta property="og:locale" content="es_UY" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="NeuralCraft — Portafolio de Nicolás" />
+  <meta name="twitter:description" content="Full-Stack Developer · Vue 3 · Next.js · Supabase · Construyendo apps con IA" />
+
   <meta name="theme-color" content="#0a0a12" />
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     script-src 'self';
     style-src 'self' 'unsafe-inline';
-    img-src 'self' data:;
+    img-src 'self' data: https://api.microlink.io https://imagecdn.microlink.io https://ghchart.rshah.org;
     connect-src 'self' https://api.github.com;
     font-src 'self';
   " />
+  <script src="/_vercel/insights/script.js" defer></script>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>⚡</text></svg>" />
 </head>
@@ -26,15 +42,17 @@
     <div class="nav-inner">
       <span class="logo">NeuralCraft</span>
       <div class="nav-links">
-        <a href="#hero" class="active">Inicio</a>
-        <a href="#about">Sobre mí</a>
-        <a href="#timeline">Trayectoria</a>
-        <a href="#projects">Proyectos</a>
-        <a href="#skills">Skills</a>
-        <a href="#ai-stack">Stack IA</a>
-        <a href="#contact">Contacto</a>
+        <a href="#hero" class="active" data-i18n="nav-home">Inicio</a>
+        <a href="#about" data-i18n="nav-about">Sobre mí</a>
+        <a href="#timeline" data-i18n="nav-timeline">Trayectoria</a>
+        <a href="#services" data-i18n="nav-services">Servicios</a>
+        <a href="#projects" data-i18n="nav-projects">Proyectos</a>
+        <a href="#skills" data-i18n="nav-skills">Skills</a>
+        <a href="#ai-stack" data-i18n="nav-ai">Stack IA</a>
+        <a href="#contact" data-i18n="nav-contact">Contacto</a>
       </div>
       <div class="nav-actions">
+        <button id="lang-toggle" class="theme-btn" aria-label="Cambiar a inglés">EN</button>
         <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">🌙</button>
         <button class="nav-toggle" aria-label="Menú">☰</button>
       </div>
@@ -44,34 +62,35 @@
   <section id="hero">
     <canvas id="bg-canvas"></canvas>
     <div class="hero-content">
-      <p class="hero-greeting">Hola, soy</p>
+      <p class="hero-greeting" data-i18n="hero-greeting">Hola, soy</p>
       <h1 class="hero-name">
         <span class="typewriter"></span><span class="cursor">|</span>
       </h1>
-      <p class="hero-tagline">
-        Full-Stack Developer · Vue 3 · Supabase · Construyendo apps con IA
+      <p class="hero-tagline" data-i18n="hero-tagline">
+        Full-Stack Developer · Vue 3 · Next.js · Supabase · Construyendo apps con IA
       </p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
-        <a href="#contact" class="btn btn-outline">Contactar</a>
+        <a href="#projects" class="btn btn-primary" data-i18n="hero-cta-projects">Ver Proyectos</a>
+        <a href="#contact" class="btn btn-outline" data-i18n="hero-cta-contact">Contactar</a>
+        <a href="cv.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-i18n="hero-cta-cv">Descargar CV</a>
       </div>
     </div>
   </section>
 
   <section id="about">
     <div class="section-header">
-      <h2>Sobre mí</h2>
+      <h2 data-i18n="about-title">Sobre mí</h2>
       <div class="divider"></div>
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>
+        <p data-i18n="about-p1">
           Soy un desarrollador <strong>Full-Stack</strong> apasionado por construir
-          aplicaciones web modernas con <strong>Vue 3</strong>, <strong>Supabase</strong>
-          y <strong>Tailwind CSS</strong>. Me encanta transformar ideas en productos
-          funcionales, desde plataformas de streaming hasta sistemas de gestión deportiva.
+          aplicaciones web modernas con <strong>Vue 3</strong>, <strong>Next.js</strong>,
+          <strong>Supabase</strong> y <strong>Tailwind CSS</strong>. Me encanta transformar ideas
+          en productos funcionales, desde plataformas de streaming hasta sistemas de gestión deportiva.
         </p>
-        <p>
+        <p data-i18n="about-p2">
           Cada proyecto lo construyo integrando <strong>IA</strong> en el flujo de
           desarrollo — desde generar código con modelos de lenguaje hasta automatizar
           tareas con agentes. Actualmente explorando <strong>LangChain</strong>,
@@ -79,16 +98,23 @@
         </p>
       </div>
       <div class="about-stats reveal">
-        <div class="stat"><span class="stat-num" data-target="2">0</span><span class="stat-label">Proyectos en Producción</span></div>
-        <div class="stat"><span class="stat-num" data-target="2">0</span><span class="stat-label">Apps Desplegadas</span></div>
-        <div class="stat"><span class="stat-num" data-target="1">0</span><span class="stat-label">Año Codeando con IA</span></div>
+        <div class="stat"><span class="stat-num" data-target="4">0</span><span class="stat-label" data-i18n="stat-prod">Proyectos en Producción</span></div>
+        <div class="stat"><span class="stat-num" data-target="4">0</span><span class="stat-label" data-i18n="stat-apps">Apps Desplegadas</span></div>
+        <div class="stat"><span class="stat-num" data-target="1">0</span><span class="stat-label" data-i18n="stat-ai">Año Codeando con IA</span></div>
       </div>
+    </div>
+    <div class="achievements reveal">
+      <div class="ach-item"><span>🚀</span><span data-i18n="ach-1">Primer deploy en producción</span></div>
+      <div class="ach-item"><span>📱</span><span data-i18n="ach-2">PWA instalable</span></div>
+      <div class="ach-item"><span>💳</span><span data-i18n="ach-3">Pagos online integrados</span></div>
+      <div class="ach-item"><span>⚛️</span><span data-i18n="ach-4">Migración a Next.js</span></div>
+      <div class="ach-item"><span>🤖</span><span data-i18n="ach-5">Desarrollo asistido por IA</span></div>
     </div>
   </section>
 
   <section id="timeline">
     <div class="section-header">
-      <h2>Mi Trayectoria</h2>
+      <h2 data-i18n="timeline-title">Mi Trayectoria</h2>
       <div class="divider"></div>
     </div>
     <div class="timeline">
@@ -96,89 +122,151 @@
         <div class="tl-dot"></div>
         <div class="tl-content">
           <span class="tl-date">2024</span>
-          <h3>Descubrí la programación</h3>
-          <p>Empecé con HTML, CSS y JavaScript. Mi primer "Hola Mundo" fue el inicio de todo.</p>
+          <h3 data-i18n="tl1-t">Descubrí la programación</h3>
+          <p data-i18n="tl1-d">Empecé con HTML, CSS y JavaScript. Mi primer "Hola Mundo" fue el inicio de todo.</p>
         </div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-content">
           <span class="tl-date">2025</span>
-          <h3>Primer proyecto con Vue 3</h3>
-          <p>Descubrí Vue 3 y la Composition API. Ahí supe que el frontend moderno era lo mío.</p>
+          <h3 data-i18n="tl2-t">Primer proyecto con Vue 3</h3>
+          <p data-i18n="tl2-d">Descubrí Vue 3 y la Composition API. Ahí supe que el frontend moderno era lo mío.</p>
         </div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-content">
           <span class="tl-date">2025</span>
-          <h3>Descubrí Supabase</h3>
-          <p>Backend sin esfuerzo: auth, base de datos, storage, edge functions. Un antes y un después.</p>
+          <h3 data-i18n="tl3-t">Descubrí Supabase</h3>
+          <p data-i18n="tl3-d">Backend sin esfuerzo: auth, base de datos, storage, edge functions. Un antes y un después.</p>
         </div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-content">
           <span class="tl-date">2026</span>
-          <h3>Anime Oriental — Primer deploy</h3>
-          <p>Plataforma de streaming completa con roles, reproductor y dark mode. Mi primer proyecto en producción.</p>
+          <h3 data-i18n="tl4-t">Anime Oriental — Primer deploy</h3>
+          <p data-i18n="tl4-d">Plataforma de streaming completa con roles, reproductor y dark mode. Mi primer proyecto en producción.</p>
         </div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-content">
           <span class="tl-date">2026</span>
-          <h3>Liga Oriental — App compleja</h3>
-          <p>Gestión deportiva con pagos, PWA, chat en tiempo real, galería y más. Mi proyecto más ambicioso.</p>
+          <h3 data-i18n="tl5-t">Liga Oriental — App compleja</h3>
+          <p data-i18n="tl5-d">Gestión deportiva con pagos, PWA, chat en tiempo real, galería y más. Mi proyecto más ambicioso.</p>
         </div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-content">
           <span class="tl-date">2026</span>
-          <h3>StackSight</h3>
-          <p>Visualizador de stack tech con exportación a PNG. Mi primer aporte open source y herramienta pública.</p>
+          <h3 data-i18n="tl6-t">StackSight</h3>
+          <p data-i18n="tl6-d">Visualizador de stack tech con exportación a PNG. Mi primer aporte open source y herramienta pública.</p>
         </div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-content">
           <span class="tl-date">2026</span>
-          <h3>FutbolPro Uruguay</h3>
-          <p>Comunidad de fútbol amateur con chat en tiempo real, desafíos, premium con Stripe y panel admin en Next.js.</p>
+          <h3 data-i18n="tl7-t">FutbolPro Uruguay</h3>
+          <p data-i18n="tl7-d">Comunidad de fútbol amateur con chat en tiempo real, desafíos, premium con Stripe y panel admin en Next.js.</p>
         </div>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <div class="tl-content">
           <span class="tl-date">2026</span>
-          <h3>Integrando IA al workflow</h3>
-          <p>Uso intensivo de ChatGPT, Claude y Cursor para acelerar desarrollo. Explorando agentes y RAG.</p>
+          <h3 data-i18n="tl8-t">Integrando IA al workflow</h3>
+          <p data-i18n="tl8-d">Uso intensivo de ChatGPT, Claude y Cursor para acelerar desarrollo. Explorando agentes y RAG.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-header">
+      <h2 data-i18n="services-title">Servicios</h2>
+      <div class="divider"></div>
+      <p class="section-sub" data-i18n="services-sub">Transformo ideas en productos web listos para producción</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🎯</div>
+        <h3 data-i18n="svc1-t">Landing Pages</h3>
+        <p data-i18n="svc1-d">Páginas de alto impacto para promocionar tu negocio, producto o evento.</p>
+        <ul class="service-feats">
+          <li data-i18n="svc1-f1">Diseño responsive y optimizado</li>
+          <li data-i18n="svc1-f2">SEO básico + analytics</li>
+        </ul>
+        <span class="service-price" data-i18n="svc1-p">desde USD 150</span>
+        <a href="#" class="btn btn-primary svc-wa" data-i18n="svc-cta">Contratar por WhatsApp</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🛠️</div>
+        <h3 data-i18n="svc2-t">Apps Web</h3>
+        <p data-i18n="svc2-d">Aplicaciones completas con auth, base de datos, pagos y panel de administración.</p>
+        <ul class="service-feats">
+          <li data-i18n="svc2-f1">Auth + base de datos + storage</li>
+          <li data-i18n="svc2-f2">Integración de pagos (Stripe / Mercado Pago)</li>
+        </ul>
+        <span class="service-price" data-i18n="svc2-p">desde USD 600</span>
+        <a href="#" class="btn btn-primary svc-wa" data-i18n="svc-cta">Contratar por WhatsApp</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📱</div>
+        <h3 data-i18n="svc3-t">PWA</h3>
+        <p data-i18n="svc3-d">Tu app instalable en el celular con modo offline y notificaciones push.</p>
+        <ul class="service-feats">
+          <li data-i18n="svc3-f1">Instalación desde el navegador</li>
+          <li data-i18n="svc3-f2">Notificaciones push</li>
+        </ul>
+        <span class="service-price" data-i18n="svc3-p">desde USD 800</span>
+        <a href="#" class="btn btn-primary svc-wa" data-i18n="svc-cta">Contratar por WhatsApp</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🤖</div>
+        <h3 data-i18n="svc4-t">Integraciones IA</h3>
+        <p data-i18n="svc4-d">Automatización, asistentes y generación de contenido con modelos de lenguaje.</p>
+        <ul class="service-feats">
+          <li data-i18n="svc4-f1">Chatbots y asistentes</li>
+          <li data-i18n="svc4-f2">Automatización de tareas</li>
+        </ul>
+        <span class="service-price" data-i18n="svc4-p">desde USD 300</span>
+        <a href="#" class="btn btn-primary svc-wa" data-i18n="svc-cta">Contratar por WhatsApp</a>
       </div>
     </div>
   </section>
 
   <section id="projects">
     <div class="section-header">
-      <h2>Proyectos Destacados</h2>
+      <h2 data-i18n="projects-title">Proyectos Destacados</h2>
       <div class="divider"></div>
+    </div>
+    <div class="filter-tabs reveal">
+      <button class="filter-btn active" data-filter="all" data-i18n="filter-all">Todos</button>
+      <button class="filter-btn" data-filter="streaming" data-i18n="filter-streaming">Streaming</button>
+      <button class="filter-btn" data-filter="sports" data-i18n="filter-sports">Gestión Deportiva</button>
+      <button class="filter-btn" data-filter="tool" data-i18n="filter-tool">Herramienta</button>
+      <button class="filter-btn" data-filter="community" data-i18n="filter-community">Comunidad</button>
     </div>
     <div class="projects-grid">
 
-      <article class="project-card reveal">
+      <article class="project-card reveal" data-category="streaming">
         <div class="card-banner">
           <div class="card-icon">🎬</div>
+          <img class="card-shot" loading="lazy" src="https://api.microlink.io?url=https%3A%2F%2Fanime-oriental.vercel.app&amp;screenshot=true&amp;meta=false&amp;embed=screenshot.url" alt="Anime Oriental" />
         </div>
         <div class="card-body">
-          <span class="card-tag">Streaming</span>
-          <h3>Anime Oriental</h3>
-          <p>Plataforma de streaming de anime con catálogo, reproductor de video, autenticación por roles y panel administrador.</p>
+          <span class="card-tag" data-i18n="p1-tag">Streaming</span>
+          <h3 data-i18n="p1-title">Anime Oriental</h3>
+          <p data-i18n="p1-desc">Plataforma de streaming de anime con catálogo, reproductor de video, autenticación por roles y panel administrador.</p>
           <ul class="card-features">
-            <li>🎞️ Catálogo con filtros (género, año, estado, popularidad)</li>
-            <li>▶️ Reproductor con control de velocidad y fullscreen</li>
-            <li>👑 Roles: Admin (CRUD) y Usuario (historial, favoritos)</li>
-            <li>🌙 Dark mode + responsive mobile-first</li>
+            <li data-i18n="p1-f1">🎞️ Catálogo con filtros (género, año, estado, popularidad)</li>
+            <li data-i18n="p1-f2">▶️ Reproductor con control de velocidad y fullscreen</li>
+            <li data-i18n="p1-f3">👑 Roles: Admin (CRUD) y Usuario (historial, favoritos)</li>
+            <li data-i18n="p1-f4">🌙 Dark mode + responsive mobile-first</li>
           </ul>
           <div class="card-tech">
             <span>Vue 3</span><span>Vite</span><span>Tailwind</span><span>Supabase</span><span>Pinia</span>
@@ -192,20 +280,21 @@
         </div>
       </article>
 
-      <article class="project-card reveal">
+      <article class="project-card reveal" data-category="sports">
         <div class="card-banner">
           <div class="card-icon">⚽</div>
+          <img class="card-shot" loading="lazy" src="https://api.microlink.io?url=https%3A%2F%2Fliga-oriental-vue.vercel.app&amp;screenshot=true&amp;meta=false&amp;embed=screenshot.url" alt="Liga Oriental" />
         </div>
         <div class="card-body">
-          <span class="card-tag">Gestión Deportiva</span>
-          <h3>Liga Oriental</h3>
-          <p>App completa para gestionar torneos de fútbol: fixture, estadísticas en vivo, pagos, galería, chat y más.</p>
+          <span class="card-tag" data-i18n="p2-tag">Gestión Deportiva</span>
+          <h3 data-i18n="p2-title">Liga Oriental</h3>
+          <p data-i18n="p2-desc">App completa para gestionar torneos de fútbol: fixture, estadísticas en vivo, pagos, galería, chat y más.</p>
           <ul class="card-features">
-            <li>📊 Tabla de posiciones, fixture automático, ranking de jugadores</li>
-            <li>💳 Pagos con Mercado Pago (Edge Functions + Webhook)</li>
-            <li>📸 Galería multimedia con likes y comentarios</li>
-            <li>⚡ Modo live + chat en tiempo real + notificaciones push</li>
-            <li>📱 PWA instalable en celular</li>
+            <li data-i18n="p2-f1">📊 Tabla de posiciones, fixture automático, ranking de jugadores</li>
+            <li data-i18n="p2-f2">💳 Pagos con Mercado Pago (Edge Functions + Webhook)</li>
+            <li data-i18n="p2-f3">📸 Galería multimedia con likes y comentarios</li>
+            <li data-i18n="p2-f4">⚡ Modo live + chat en tiempo real + notificaciones push</li>
+            <li data-i18n="p2-f5">📱 PWA instalable en celular</li>
           </ul>
           <div class="card-tech">
             <span>Vue 3</span><span>Pinia</span><span>Supabase</span><span>Tailwind</span><span>Mercado Pago</span><span>PWA</span>
@@ -219,19 +308,20 @@
         </div>
       </article>
 
-      <article class="project-card reveal">
+      <article class="project-card reveal" data-category="tool">
         <div class="card-banner">
           <div class="card-icon">📊</div>
+          <img class="card-shot" loading="lazy" src="https://api.microlink.io?url=https%3A%2F%2Fstack-sight-one.vercel.app&amp;screenshot=true&amp;meta=false&amp;embed=screenshot.url" alt="StackSight" />
         </div>
         <div class="card-body">
-          <span class="card-tag">Herramienta</span>
-          <h3>StackSight</h3>
-          <p>Visualizador de stack tech: seleccioná tus tecnologías, personalizá la card y exportala como PNG para compartir.</p>
+          <span class="card-tag" data-i18n="p3-tag">Herramienta</span>
+          <h3 data-i18n="p3-title">StackSight</h3>
+          <p data-i18n="p3-desc">Visualizador de stack tech: seleccioná tus tecnologías, personalizá la card y exportala como PNG para compartir.</p>
           <ul class="card-features">
-            <li>📦 37 tecnologías en 5 categorías</li>
-            <li>🎨 5 temas de color para la card</li>
-            <li>📸 Exporta a PNG con html2canvas</li>
-            <li>⚡ Hecho con Vue 3 + Composition API</li>
+            <li data-i18n="p3-f1">📦 37 tecnologías en 5 categorías</li>
+            <li data-i18n="p3-f2">🎨 5 temas de color para la card</li>
+            <li data-i18n="p3-f3">📸 Exporta a PNG con html2canvas</li>
+            <li data-i18n="p3-f4">⚡ Hecho con Vue 3 + Composition API</li>
           </ul>
           <div class="card-tech">
             <span>Vue 3</span><span>html2canvas</span><span>CSS Grid</span>
@@ -243,20 +333,21 @@
         </div>
       </article>
 
-      <article class="project-card reveal">
+      <article class="project-card reveal" data-category="community">
         <div class="card-banner">
           <div class="card-icon">🏆</div>
+          <img class="card-shot" loading="lazy" src="https://api.microlink.io?url=https%3A%2F%2Ffutbolprouruguay.vercel.app&amp;screenshot=true&amp;meta=false&amp;embed=screenshot.url" alt="FutbolPro Uruguay" />
         </div>
         <div class="card-body">
-          <span class="card-tag">Comunidad Deportiva</span>
-          <h3>FutbolPro Uruguay</h3>
-          <p>Plataforma para conectar jugadores y equipos de fútbol amateur en Uruguay: perfiles, desafíos, chat en vivo y más.</p>
+          <span class="card-tag" data-i18n="p4-tag">Comunidad Deportiva</span>
+          <h3 data-i18n="p4-title">FutbolPro Uruguay</h3>
+          <p data-i18n="p4-desc">Plataforma para conectar jugadores y equipos de fútbol amateur en Uruguay: perfiles, desafíos, chat en vivo y más.</p>
           <ul class="card-features">
-            <li>👥 Búsqueda de jugadores por posición y ubicación</li>
-            <li>⚔️ Desafíos entre equipos, feed con likes y comentarios</li>
-            <li>💬 Chat en tiempo real con Pusher</li>
-            <li>💳 Premium con Stripe y panel administrador</li>
-            <li>⚛️ Server Actions + React Query en Next.js App Router</li>
+            <li data-i18n="p4-f1">👥 Búsqueda de jugadores por posición y ubicación</li>
+            <li data-i18n="p4-f2">⚔️ Desafíos entre equipos, feed con likes y comentarios</li>
+            <li data-i18n="p4-f3">💬 Chat en tiempo real con Pusher</li>
+            <li data-i18n="p4-f4">💳 Premium con Stripe y panel administrador</li>
+            <li data-i18n="p4-f5">⚛️ Server Actions + React Query en Next.js App Router</li>
           </ul>
           <div class="card-tech">
             <span>Next.js</span><span>React 19</span><span>TypeScript</span><span>Supabase</span><span>Tailwind</span><span>Stripe</span><span>Pusher</span>
@@ -273,28 +364,95 @@
     </div>
   </section>
 
+  <section id="testimonials">
+    <div class="section-header">
+      <h2 data-i18n="test-title">Testimonios</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <p class="test-quote" data-i18n="t1-q">"Contratamos a Nicolás para la plataforma de la liga y superó todas las expectativas. La app quedó impecable y los pagos funcionaron perfecto desde el primer día."</p>
+        <div class="test-author">
+          <span class="test-avatar">👨‍💼</span>
+          <div>
+            <strong data-i18n="t1-n">Organizador · Liga Oriental</strong>
+            <span data-i18n="t1-r">Cliente deportivo</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="test-quote" data-i18n="t2-q">"El catálogo y el reproductor son rapidísimos. Muy prolijo en código y con una comunicación excelente durante todo el proyecto."</p>
+        <div class="test-author">
+          <span class="test-avatar">👩‍💻</span>
+          <div>
+            <strong data-i18n="t2-n">Cliente · Anime Oriental</strong>
+            <span data-i18n="t2-r">Proyecto streaming</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="test-quote" data-i18n="t3-q">"Rápido, responsable y con un ojo increíble para el detalle. Lo recomiendo para cualquier proyecto web."</p>
+        <div class="test-author">
+          <span class="test-avatar">🧑‍🚀</span>
+          <div>
+            <strong data-i18n="t3-n">Usuario · StackSight</strong>
+            <span data-i18n="t3-r">Herramienta pública</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="section-header">
+      <h2 data-i18n="blog-title">Notas Técnicas</h2>
+      <div class="divider"></div>
+      <p class="section-sub" data-i18n="blog-sub">Aprendizajes y experimentos de mi día a día</p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card reveal">
+        <span class="blog-tag" data-i18n="b1-tag">Vue 3</span>
+        <h3 data-i18n="b1-title">Composition API en el mundo real</h3>
+        <p data-i18n="b1-d">Cómo organizo composables reutilizables en mis proyectos.</p>
+        <span class="blog-date">2026</span>
+      </article>
+      <article class="blog-card reveal">
+        <span class="blog-tag" data-i18n="b2-tag">Supabase</span>
+        <h3 data-i18n="b2-title">Realtime sin dolor</h3>
+        <p data-i18n="b2-d">Patrones para chat y actualizaciones en vivo con suscripciones.</p>
+        <span class="blog-date">2026</span>
+      </article>
+      <article class="blog-card reveal">
+        <span class="blog-tag" data-i18n="b3-tag">IA</span>
+        <h3 data-i18n="b3-title">IA en el flujo de desarrollo</h3>
+        <p data-i18n="b3-d">Cómo uso agentes y RAG para acelerar el desarrollo.</p>
+        <span class="blog-date">2026</span>
+      </article>
+    </div>
+  </section>
+
   <section id="skills">
     <div class="section-header">
-      <h2>Tecnologías</h2>
+      <h2 data-i18n="skills-title">Tecnologías</h2>
       <div class="divider"></div>
     </div>
     <div class="skills-container">
       <div class="skill-group reveal">
-        <h3>Frontend</h3>
+        <h3 data-i18n="skills-front">Frontend</h3>
         <div class="skill-bar"><span>Vue 3</span><div class="bar"><div class="fill" style="--p:95%"></div></div></div>
         <div class="skill-bar"><span>JavaScript</span><div class="bar"><div class="fill" style="--p:90%"></div></div></div>
         <div class="skill-bar"><span>TypeScript</span><div class="bar"><div class="fill" style="--p:75%"></div></div></div>
         <div class="skill-bar"><span>Tailwind CSS</span><div class="bar"><div class="fill" style="--p:90%"></div></div></div>
       </div>
       <div class="skill-group reveal">
-        <h3>Backend & DB</h3>
+        <h3 data-i18n="skills-back">Backend & DB</h3>
         <div class="skill-bar"><span>Supabase</span><div class="bar"><div class="fill" style="--p:95%"></div></div></div>
         <div class="skill-bar"><span>PostgreSQL</span><div class="bar"><div class="fill" style="--p:85%"></div></div></div>
         <div class="skill-bar"><span>Edge Functions</span><div class="bar"><div class="fill" style="--p:80%"></div></div></div>
         <div class="skill-bar"><span>REST APIs</span><div class="bar"><div class="fill" style="--p:85%"></div></div></div>
       </div>
       <div class="skill-group reveal">
-        <h3>Herramientas</h3>
+        <h3 data-i18n="skills-tools">Herramientas</h3>
         <div class="skill-bar"><span>Git</span><div class="bar"><div class="fill" style="--p:90%"></div></div></div>
         <div class="skill-bar"><span>Vite</span><div class="bar"><div class="fill" style="--p:90%"></div></div></div>
         <div class="skill-bar"><span>Vercel</span><div class="bar"><div class="fill" style="--p:85%"></div></div></div>
@@ -305,9 +463,9 @@
 
   <section id="ai-stack">
     <div class="section-header">
-      <h2>Stack IA</h2>
+      <h2 data-i18n="ai-title">Stack IA</h2>
       <div class="divider"></div>
-      <p class="section-sub">Las herramientas que uso para potenciar mi desarrollo con inteligencia artificial</p>
+      <p class="section-sub" data-i18n="ai-sub">Las herramientas que uso para potenciar mi desarrollo con inteligencia artificial</p>
     </div>
     <div class="ai-grid">
       <div class="ai-card reveal">
@@ -315,72 +473,75 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
         </div>
         <h3>ChatGPT</h3>
-        <p>Ideación, debugging, code review. Mi copiloto de cabecera para resolver problemas complejos.</p>
+        <p data-i18n="ai1-d">Ideación, debugging, code review. Mi copiloto de cabecera para resolver problemas complejos.</p>
       </div>
       <div class="ai-card reveal">
         <div class="ai-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
         </div>
         <h3>Claude</h3>
-        <p>Análisis profundo, arquitectura de software y refactorización. Ideal para diseño de sistemas.</p>
+        <p data-i18n="ai2-d">Análisis profundo, arquitectura de software y refactorización. Ideal para diseño de sistemas.</p>
       </div>
       <div class="ai-card reveal">
         <div class="ai-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
         </div>
         <h3>Cursor</h3>
-        <p>IDE con IA integrada. Autocompletado inteligente y edición contextual sin salir del editor.</p>
+        <p data-i18n="ai3-d">IDE con IA integrada. Autocompletado inteligente y edición contextual sin salir del editor.</p>
       </div>
       <div class="ai-card reveal">
         <div class="ai-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>
         </div>
         <h3>GitHub Copilot</h3>
-        <p>Autocompletado en tiempo real. Genera funciones completas mientras escribo el nombre.</p>
+        <p data-i18n="ai4-d">Autocompletado en tiempo real. Genera funciones completas mientras escribo el nombre.</p>
       </div>
       <div class="ai-card reveal">
         <div class="ai-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
         </div>
         <h3>OpenAI API</h3>
-        <p>Integración de GPT en apps. Automatización, generación de contenido y asistentes inteligentes.</p>
+        <p data-i18n="ai5-d">Integración de GPT en apps. Automatización, generación de contenido y asistentes inteligentes.</p>
       </div>
       <div class="ai-card reveal">
         <div class="ai-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"/></svg>
         </div>
         <h3>LangChain</h3>
-        <p>Explorando cadenas de LLM, RAG pipelines y agentes autónomos para proyectos futuros.</p>
+        <p data-i18n="ai6-d">Explorando cadenas de LLM, RAG pipelines y agentes autónomos para proyectos futuros.</p>
       </div>
     </div>
   </section>
 
   <section id="github">
     <div class="section-header">
-      <h2>Actividad Reciente</h2>
+      <h2 data-i18n="gh-title">Actividad Reciente</h2>
       <div class="divider"></div>
-      <p class="section-sub">Mis últimos proyectos en GitHub</p>
+      <p class="section-sub" data-i18n="gh-sub">Mis últimos proyectos en GitHub</p>
     </div>
     <div class="github-grid" id="gh-repos">
       <div class="gh-loader">Cargando...</div>
+    </div>
+    <div class="gh-chart reveal">
+      <img class="gh-chart-img" loading="lazy" src="https://ghchart.rshah.org/LigaOrientalok" alt="GitHub Contributions" />
     </div>
   </section>
 
   <section id="contact">
     <div class="section-header">
-      <h2>Contacto</h2>
+      <h2 data-i18n="contact-title">Contacto</h2>
       <div class="divider"></div>
     </div>
     <div class="contact-content reveal">
-      <p>¿Tienes un proyecto en mente? Hablemos.</p>
+      <p data-i18n="contact-p">¿Tienes un proyecto en mente? Hablemos.</p>
       <div class="contact-form reveal">
         <form id="contact-form" novalidate>
           <div class="form-row">
-            <input type="text" id="cf-name" name="name" placeholder="Tu nombre" maxlength="80" required />
-            <input type="email" id="cf-email" name="email" placeholder="Tu email (opcional)" maxlength="120" />
+            <input type="text" id="cf-name" name="name" placeholder="Tu nombre" maxlength="80" required data-i18n-placeholder="cf-name" />
+            <input type="email" id="cf-email" name="email" placeholder="Tu email (opcional)" maxlength="120" data-i18n-placeholder="cf-email" />
           </div>
-          <textarea id="cf-message" name="message" placeholder="Contame sobre tu proyecto..." maxlength="1000" required></textarea>
-          <button type="submit" class="btn btn-primary">Enviar por WhatsApp</button>
+          <textarea id="cf-message" name="message" placeholder="Contame sobre tu proyecto..." maxlength="1000" required data-i18n-placeholder="cf-msg"></textarea>
+          <button type="submit" class="btn btn-primary" data-i18n="cf-submit">Enviar por WhatsApp</button>
           <p class="form-status" id="form-status" aria-live="polite"></p>
         </form>
       </div>
@@ -388,10 +549,11 @@
   </section>
 
   <footer>
-    <p>&copy; <span id="year"></span> NeuralCraft — Hecho con ⚡ Vue y Supabase</p>
+    <p>© <span id="year"></span> NeuralCraft — <span data-i18n="footer-text">Hecho con ⚡ Vue y Supabase</span></p>
   </footer>
 
   <a href="#" class="wa-float" id="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Enviarme un mensaje por WhatsApp">
+    <span class="wa-tip" data-i18n="wa-tip">¿Hablamos? Escríbeme ✨</span>
     <svg viewBox="0 0 448 512" role="img"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
   </a>
 

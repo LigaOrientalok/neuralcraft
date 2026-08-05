@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Nicolás · Full-Stack Developer</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="Curriculum Vitae de Nicolás — Full-Stack Developer especializado en Vue 3, Next.js, Supabase e IA." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif; color: #1a1a2e;
+      background: #f0f2f5; line-height: 1.55; padding: 2rem 1rem;
+    }
+    .sheet {
+      max-width: 800px; margin: 0 auto; background: #fff;
+      border-radius: 14px; box-shadow: 0 10px 40px rgba(0,0,0,.1);
+      padding: 2.5rem 3rem;
+    }
+    header { border-bottom: 3px solid #7c3aed; padding-bottom: 1.2rem; margin-bottom: 1.5rem; }
+    header h1 { font-size: 2rem; }
+    .role { color: #7c3aed; font-weight: 600; margin: .2rem 0 .6rem; }
+    .contact-line { color: #555577; font-size: .9rem; display: flex; flex-wrap: wrap; gap: .8rem 1.4rem; }
+    h2 {
+      font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1px;
+      color: #7c3aed; margin: 1.6rem 0 .8rem;
+    }
+    p.desc { color: #555577; font-size: .95rem; }
+    ul { list-style: none; }
+    ul li { padding: .25rem 0 .25rem 1.1rem; position: relative; font-size: .95rem; }
+    ul li::before { content: '▹'; position: absolute; left: 0; color: #7c3aed; }
+    .job { margin-bottom: 1rem; }
+    .job-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .4rem; }
+    .job-head strong { font-size: 1rem; }
+    .job-head span { color: #555577; font-size: .85rem; }
+    .skills-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .skills-tags span {
+      background: #f3effc; color: #6d28d9; font-size: .82rem;
+      padding: .3rem .75rem; border-radius: 50px; font-weight: 600;
+    }
+    .print-btn {
+      position: fixed; bottom: 1.5rem; right: 1.5rem;
+      background: linear-gradient(135deg, #7c3aed, #06b6d4); color: #fff; border: none;
+      padding: .8rem 1.6rem; border-radius: 50px; font-weight: 600; cursor: pointer;
+      font-size: .95rem; box-shadow: 0 8px 25px rgba(124,58,237,.35); transition: transform .2s;
+    }
+    .print-btn:hover { transform: translateY(-2px); }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .sheet { box-shadow: none; padding: 1rem 1.5rem; border-radius: 0; max-width: 100%; }
+      .print-btn { display: none; }
+    }
+    @media (max-width: 600px) { .sheet { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <header>
+      <h1>Nicolás</h1>
+      <div class="role">Full-Stack Developer · Vue 3 · Next.js · Supabase · IA</div>
+      <div class="contact-line">
+        <span>🌍 Uruguay</span>
+        <a href="https://github.com/LigaOrientalok" target="_blank" rel="noopener noreferrer">🐙 GitHub: LigaOrientalok</a>
+        <a href="https://neuralcraft-green.vercel.app" target="_blank" rel="noopener noreferrer">⚡ neuralcraft-green.vercel.app</a>
+        <span>💬 WhatsApp: 598 97 844 136</span>
+      </div>
+    </header>
+
+    <h2>Resumen</h2>
+    <p class="desc">
+      Desarrollador Full-Stack autodidacta con 4 proyectos en producción. Me especializo en construir
+      aplicaciones web completas con Vue 3, Next.js y Supabase, integrando IA en todo el flujo de desarrollo.
+      De las landing pages a PWAs con pagos, chat en tiempo real y paneles de administración.
+    </p>
+
+    <h2>Skills</h2>
+    <div class="skills-tags">
+      <span>Vue 3</span><span>Pinia</span><span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span>
+      <span>Supabase</span><span>PostgreSQL</span><span>Edge Functions</span><span>Stripe</span>
+      <span>Mercado Pago</span><span>Pusher</span><span>PWA</span><span>REST APIs</span><span>Git</span>
+      <span>Vercel</span><span>ChatGPT</span><span>Claude</span><span>Cursor</span><span>LangChain</span>
+    </div>
+
+    <h2>Proyectos Destacados</h2>
+    <div class="job">
+      <div class="job-head">
+        <strong>FutbolPro Uruguay — Comunidad de fútbol amateur</strong>
+        <span>2026 · Next.js 16 · Stripe · Pusher</span>
+      </div>
+      <ul>
+        <li>Perfiles, búsqueda de jugadores por posición/ubicación y equipos.</li>
+        <li>Desafíos entre equipos, feed con likes y comentarios.</li>
+        <li>Chat en tiempo real, premium con Stripe y panel admin.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head">
+        <strong>Liga Oriental — Gestión deportiva</strong>
+        <span>2026 · Vue 3 · Supabase · Mercado Pago · PWA</span>
+      </div>
+      <ul>
+        <li>Fixture, tabla de posiciones, ranking y estadísticas en vivo.</li>
+        <li>Pagos con Mercado Pago (Edge Functions + Webhook).</li>
+        <li>Galería, chat en tiempo real y notificaciones push. PWA instalable.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head">
+        <strong>Anime Oriental — Plataforma de streaming</strong>
+        <span>2026 · Vue 3 · Supabase · Pinia</span>
+      </div>
+      <ul>
+        <li>Catálogo con filtros y reproductor de video.</li>
+        <li>Roles: Admin (CRUD) y Usuario (historial, favoritos).</li>
+        <li>Dark mode y responsive mobile-first.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <div class="job-head">
+        <strong>StackSight — Visualizador de stack tech</strong>
+        <span>2026 · Vue 3 · html2canvas</span>
+      </div>
+      <ul>
+        <li>37 tecnologías en 5 categorías con 5 temas de color.</li>
+        <li>Exportación de la card a PNG para compartir.</li>
+      </ul>
+    </div>
+
+    <h2>Trayectoria</h2>
+    <div class="job">
+      <div class="job-head"><strong>Desarrollador Full-Stack Freelance</strong><span>2024 — Actualidad</span></div>
+      <ul>
+        <li>Desarrollo end-to-end de apps en producción con integración de IA.</li>
+        <li>Automatización de flujos con agentes, RAG y modelos de lenguaje.</li>
+      </ul>
+    </div>
+
+    <h2>Contacto</h2>
+    <ul>
+      <li>WhatsApp: <a href="https://wa.me/59897844136" target="_blank" rel="noopener noreferrer">598 97 844 136</a></li>
+      <li>Portafolio: <a href="https://neuralcraft-green.vercel.app" target="_blank" rel="noopener noreferrer">neuralcraft-green.vercel.app</a></li>
+      <li>GitHub: <a href="https://github.com/LigaOrientalok" target="_blank" rel="noopener noreferrer">github.com/LigaOrientalok</a></li>
+    </ul>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">⬇️ Descargar PDF</button>
+</body>
+</html>
