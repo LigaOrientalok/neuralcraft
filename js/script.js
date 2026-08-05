@@ -270,3 +270,42 @@ document.querySelectorAll('.card-btn[href*="vercel.app"]').forEach(btn => {
     this.classList.add('loading');
   });
 });
+
+/* ===== WhatsApp Contact ===== */
+const WHATSAPP_NUMBER = '59897844136';
+
+const waFloat = document.getElementById('wa-float');
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+function waLink(message) {
+  return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
+}
+
+if (waFloat) {
+  waFloat.href = waLink('¡Hola Nicolás! Te contacto desde tu portafolio.');
+}
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+
+    if (!name || !message) {
+      formStatus.textContent = 'Completá tu nombre y el mensaje.';
+      formStatus.className = 'form-status err';
+      return;
+    }
+
+    const lines = ['Hola Nicolás, mi nombre es ' + name + '.', '', message];
+    if (email) lines.push('', 'Mi email: ' + email);
+
+    window.open(waLink(lines.join('\n')), '_blank', 'noopener,noreferrer');
+    formStatus.textContent = 'Se abrió WhatsApp con tu mensaje. ¡Solo tenés que enviarlo!';
+    formStatus.className = 'form-status ok';
+    contactForm.reset();
+  });
+}
